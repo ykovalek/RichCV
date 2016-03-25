@@ -13,7 +13,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
@@ -28,9 +27,10 @@ public class RichCvApplication extends WebMvcConfigurerAdapter {
 	@Bean
 	public ViewResolver viewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
-		viewResolver.setViewClass(JstlView.class);
+//		viewResolver.setViewClass(JstlView.class);
 		viewResolver.setPrefix("/WEB-INF/views/jsp/");
-		viewResolver.setSuffix(".jsp");
+//		viewResolver.setSuffix(".jsp");
+		viewResolver.setSuffix(".html");
 		return viewResolver;
 	}
 
@@ -41,8 +41,9 @@ public class RichCvApplication extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-		super.configureDefaultServletHandling(configurer);
-//		configurer.enable("org.springframework.web.servlet.DispatcherServlet");
+//		super.configureDefaultServletHandling(configurer);
+////		configurer.enable("org.springframework.web.servlet.DispatcherServlet");
+//		configurer.enable("dispatcherServlet");
 		configurer.enable();
 	}
 }
