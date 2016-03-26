@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class RootController {
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public ModelAndView root() {
         ModelAndView model = new ModelAndView();
         model.setViewName("hello");

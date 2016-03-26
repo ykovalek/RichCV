@@ -54,9 +54,6 @@ public class RichCvApplication extends WebMvcConfigurerAdapter {
 	@Override
 	@Autowired
 	public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
-//		super.configureDefaultServletHandling(configurer);
-////		configurer.enable("org.springframework.web.servlet.DispatcherServlet");
-//		configurer.enable("dispatcherServlet");
 		configurer.enable();
 	}
 }
