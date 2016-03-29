@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.sql.DataSource;
+import javax.persistence.EntityManager;
 
 /**
  * Created by Yuriy Kovalek on 3/23/16.
@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 @Controller
 public class RootController {
     @Autowired
-    private DataSource db;
+    private EntityManager em;
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public ModelAndView root() {
