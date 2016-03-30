@@ -21,7 +21,7 @@ public class RootController {
         ModelAndView model = new ModelAndView();
         model.setViewName("hello");
         model.addObject("title", "It Works!");
-        model.addObject("name", "Bro");
+        model.addObject("appVersion", "0.0.2");
         return model;
     }
 }
