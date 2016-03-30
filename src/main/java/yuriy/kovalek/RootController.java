@@ -16,7 +16,7 @@ public class RootController {
     @Autowired
     private EntityManager em;
 
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView root() {
         ModelAndView model = new ModelAndView();
         model.setViewName("hello");
