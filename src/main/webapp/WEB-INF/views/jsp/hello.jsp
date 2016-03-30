@@ -15,13 +15,12 @@
         <td class="c31" colspan="1" rowspan="1"><p class="c8"><span class="c0">@Name(&quot;</span><span
                 class="c3 c7 c26">Yuriy Kovalek</span><span class="c25 c0">&quot;)</span></p>
             <p class="c8"><span class="c0 c25">@SoftwareEngineer(lang=&quot;Java&quot;)</span></p>
-            <p class="c8"><span class="c0">@Email(&quot;</span><span class="c0 c23"><a class="c22"
-                                                                                       href="mailto:yuriy.kovalek@gmail.com">yuriy.kovalek@gmail.com</a></span><span
+            <p class="c8"><span class="c0">@Email(&quot;</span><span class="c0 c23"><a class="c22">yuriy.kovalek at gmail.com</a></span><span
                     class="c25 c0">&quot;)</span></p>
             <p class="c8"><span class="c25 c0">@Phone(&quot;+380.99.294.56.91&quot;)</span></p></td>
         <td class="c31" colspan="1" rowspan="1"><p class="c17 c32"><span
                 style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 150.98px; height: 150.98px;"><img
-                alt="04a8202.jpg" src="/resources/images/image00.jpg"
+                alt="04a8202.jpg" src="resources/images/image00.jpg"
                 style="width: 150.98px; height: 150.98px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
                 title=""></span></p></td>
     </tr>
