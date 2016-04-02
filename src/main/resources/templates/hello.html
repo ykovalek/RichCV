@@ -1,10 +1,9 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<html>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
     <link rel="stylesheet" href="resources/core/css/hello.css"/>
-    <title>RichCV v. <c:out value="${appVersion}"/></title>
+    <title th:text="'RichCV v. '+ ${appVersion}"/>
 </head>
 <body class="c10 c19"><p class="c17 c20"><span class="c0"></span></p><a
         id="t.360b9fda0ea703ea0cf6d1249175d9d272d89124"></a><a id="t.0"></a>
@@ -21,7 +20,7 @@
                 style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 150.98px; height: 150.98px;"><img
                 alt="04a8202.jpg" src="resources/images/image00.jpg"
                 style="width: 150.98px; height: 150.98px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
-                title=""></span></p></td>
+                title="" /></span></p></td>
     </tr>
     </tbody>
 </table>
