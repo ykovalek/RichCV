@@ -23,7 +23,7 @@ public class RootControllerTests {
 
 
     @Before
-    private void setUp() {
+    public void setUp() {
         mockMvc = MockMvcBuilders.webAppContextSetup(this.context).build();
     }
 
