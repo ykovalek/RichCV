@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.persistence.EntityManager;
+import java.util.*;
 
 /**
  * Created by Yuriy Kovalek on 3/23/16.
@@ -22,6 +23,18 @@ public class RootController {
         model.setViewName("hello");
         model.addObject("title", "It Works!");
         model.addObject("appVersion", "0.0.2");
+
+        Map<String, List<String>> skillset = new LinkedHashMap<>();
+        skillset.put("javaStack", Arrays.asList("Java EE", "Core Java", "JDBC", "Spring DI/MVC",
+                "JPA/Hibernate", "JAX-RS/Jersey", "JAX-WS/Axis", "JSON/XML/XSLT", "EJB/JMS/JNDI", "AWS API",
+                "NoSQL/Jongo/Map-Reduce"));
+        skillset.put("databases", Arrays.asList("MySQL", "MongoDB", "Cassandra", "AWS DB Engines"));
+        skillset.put("servers", Arrays.asList("Tomcat", "Glassfish", "AWS Cloud", "Windows/*NIX"));
+        skillset.put("ci", Arrays.asList("JUnit", "SVN/Git", "TeamCity", "Jira/etc.", "Bitbucket", "Maven"));
+
+        Map<String, Object> cv = new HashMap<>();
+        cv.put("skillset", skillset);
+        model.addObject("cv", cv);
         return model;
     }
 }

@@ -28,26 +28,50 @@
         class="c3 c7">Enterprise</span><span class="c3 c7">Java</span><span class="c3 c7">Specialist</span><span
         class="c0">&nbsp;</span><span class="c11 c2 c7">{</span></p>
 
-<p th:each="area : ${cv.skillset}" class="c17">
-    <div style="margin-top: 10px; width: 100%; overflow: overlay;">
-        <span style="height: 100%;" class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <span class="c11 c2 c7">String[]</span><span class="c0">&nbsp;</span>
-        <!--Skill area-->
-        <span class="c0 c3" th:text="${area.key}" />
-        <div style="text-indent: -10em; width: 25em; float: right;">
-            <span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span class="c11 c2 c7">= new String[] {</span>
-            <span th:each="skill, iterStat: ${area.value}">
-                    <span class="c0 c2">&quot;</span><span class="c0 c3" th:text="${skill}"/><span class="c0 c2">&quot;</span><span th:unless="${iterStat.last}" class="c0 c2" th:text="', '"/>
-            </span>
-            <span class="c11 c2 c7">};</span>
-        </div>
-    </div>
-</p>
+<p class="c17"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+        class="c11 c2 c7">String[]</span><span class="c0">&nbsp;</span><span class="c0 c3">javaStack</span><span
+        class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+        class="c11 c2 c7">= new String[] {</span><span class="c0 c2">&quot;</span><span
+        class="c0 c3">Core Java</span><span class="c0 c2">&quot;, &quot;</span><span class="c0 c3">Java EE</span><span
+        class="c0 c2">&quot;, &quot;</span><span class="c0 c3">JDBC</span><span class="c0 c2">&quot;, &quot;</span><span
+        class="c0 c3">Spring DI/MVC</span><span class="c0 c2">&quot;,</span></p>
+<p class="c17 c30"><span class="c0 c2">&quot;</span><span class="c0 c3">JPA/Hibernate</span><span class="c0 c2">&quot;, &quot;</span><span
+        class="c0 c3">JAX-RS/Jersey</span><span class="c0 c2">&quot;, &quot;</span><span
+        class="c0 c3">JAX-WS/Axis</span><span class="c0 c2">&quot;,</span></p>
+<p class="c17 c30"><span class="c0 c2">&quot;</span><span class="c0 c3">JSON/XML/XSLT</span><span class="c0 c2">&quot;, &quot;</span><span
+        class="c0 c3">EJB/JMS/JNDI</span><span class="c0 c2">&quot;, &quot;</span><span
+        class="c0 c3">AWS API</span><span class="c0 c2">&quot;,</span></p>
+<p class="c17 c30"><span class="c0 c2">&quot;</span><span class="c0 c3">NoSQL/Jongo/Map-Reduce</span><span
+        class="c0 c2">&rdquo;</span><span class="c11 c7 c18">};</span></p>
+<p class="c17 c20"><span class="c11 c7"></span></p>
+<p class="c17"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+        class="c2 c7 c11">String[]</span><span class="c0 c2">&nbsp;</span><span class="c0 c3">databases</span><span
+        class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+        class="c11 c2 c7">= new String[] {</span><span class="c0 c2">&quot;</span><span class="c0 c3">MySQL</span><span
+        class="c0 c2">&quot;, &quot;</span><span class="c0 c3">MongoDB</span><span
+        class="c0 c2">&quot;, &quot;</span><span class="c0 c3">Cassandra</span><span class="c0 c2">&quot;, &quot;</span><span
+        class="c0 c3">AWS DB Engines</span><span class="c0 c2">&quot;</span><span class="c11 c2 c7">};</span></p>
+<p class="c17 c20"><span class="c11 c7"></span></p>
+<p class="c17"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+        class="c11 c2 c7">String[]</span><span class="c0 c2">&nbsp;</span><span class="c0 c3">servers</span><span
+        class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+        class="c11 c2 c7">= new String[] {</span><span class="c0 c2">&quot;</span><span class="c0 c3">Tomcat</span><span
+        class="c0 c2">&quot;, &quot;</span><span class="c0 c3">Glassfish</span><span class="c0 c2">&quot;, &quot;</span><span
+        class="c0 c3">AWS Cloud</span><span class="c0 c2">&quot;, &quot;</span><span
+        class="c0 c3">Windows/*NIX</span><span class="c0 c2">&quot;</span><span class="c11 c2 c7">};</span></p>
+<p class="c17 c20"><span class="c11 c7"></span></p>
+<p class="c17"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+        class="c11 c2 c7">String[]</span><span class="c0 c2">&nbsp;</span><span class="c0 c3">ci</span><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+        class="c11 c2 c7">= new String[]</span><span class="c0 c2">&nbsp;</span><span class="c11 c2 c7">{</span><span
+        class="c0 c2">&quot;</span><span class="c0 c3">JUnit</span><span class="c0 c2">&quot;, &quot;</span><span
+        class="c0 c3">SVN/Git</span><span class="c0 c2">&quot;, &quot;</span><span class="c0 c3">TeamCity</span><span
+        class="c0 c2">&quot;, &quot;</span><span class="c0 c3">Jira/etc.</span><span class="c0 c2">&quot;, &quot;</span><span
+        class="c0 c3">Bitbucket</span><span class="c0 c2">&quot;,</span></p>
+<p class="c16"><span class="c0 c2">&quot;</span><span class="c0 c3">Maven</span><span class="c0 c2">&quot;</span><span
+        class="c11 c2 c7">};</span><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
 <p class="c6"><span class="c11 c7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
-<p class="c6"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-
-    <span class="c7">History </span><span class="c3 c7">work</span><span class="c0">&nbsp;</span><span class="c11 c7 c24">= HistoryUtils.fromJSON( --inline&gt;&gt;</span>
+<p class="c6"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+        class="c7">History </span><span class="c3 c7">work</span><span class="c0">&nbsp;</span><span class="c11 c7 c24">= HistoryUtils.fromJSON( --inline&gt;&gt;</span>
 </p>
 <p class="c6"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
         class="c0">&quot;</span><span class="c7">Jan 2015 - Jun 2015</span><span class="c0">&quot;: </span><span
