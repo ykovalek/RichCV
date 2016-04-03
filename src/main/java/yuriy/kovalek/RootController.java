@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.persistence.EntityManager;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.*;
 
 /**
@@ -37,6 +39,10 @@ public class RootController {
         cv.put("name", "Yuriy Kovalek");
         cv.put("email", "yuriy.kovalek at gmail.com");
         cv.put("phone", "+380.99.294.56.91");
+
+        Map<Period, Object> workHistory = new LinkedHashMap<>();
+        workHistory.put(Period.between(LocalDate.MIN, LocalDate.now()), "");
+        cv.put("workHistory", workHistory);
 
         model.addObject("cv", cv);
         return model;
