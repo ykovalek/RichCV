@@ -10,12 +10,12 @@
 <table class="c28">
     <tbody>
     <tr class="c27">
-        <td class="c31" colspan="1" rowspan="1"><p class="c8"><span class="c0">@Name(&quot;</span><span
-                class="c3 c7 c26">Yuriy Kovalek</span><span class="c25 c0">&quot;)</span></p>
+        <td class="c31" colspan="1" rowspan="1">
+            <p class="c8">
+                <span class="c0">@Name(&quot;</span><span class="c3 c7 c26" th:text="${cv.name}"/><span class="c25 c0">&quot;)</span></p>
             <p class="c8"><span class="c0 c25">@SoftwareEngineer(lang=&quot;Java&quot;)</span></p>
-            <p class="c8"><span class="c0">@Email(&quot;</span><span class="c0 c23"><a class="c22">yuriy.kovalek at gmail.com</a></span><span
-                    class="c25 c0">&quot;)</span></p>
-            <p class="c8"><span class="c25 c0">@Phone(&quot;+380.99.294.56.91&quot;)</span></p></td>
+            <p class="c8"><span class="c0">@Email(&quot;</span><span class="c0 c23"><a class="c22" th:text="${cv.email}"/></span><span class="c25 c0">&quot;)</span></p>
+            <p class="c8"><span class="c25 c0" th:text="'@Phone(&quot;'+ ${cv.phone} +'&quot;)'"/></p></td>
         <td class="c31" colspan="1" rowspan="1"><p class="c17 c32"><span
                 style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 150.98px; height: 150.98px;"><img
                 alt="04a8202.jpg" src="resources/images/image00.jpg"

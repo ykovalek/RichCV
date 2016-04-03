@@ -34,6 +34,10 @@ public class RootController {
 
         Map<String, Object> cv = new HashMap<>();
         cv.put("skillset", skillset);
+        cv.put("name", "Yuriy Kovalek");
+        cv.put("email", "yuriy.kovalek at gmail.com");
+        cv.put("phone", "+380.99.294.56.91");
+
         model.addObject("cv", cv);
         return model;
     }
