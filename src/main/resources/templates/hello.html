@@ -30,12 +30,10 @@
 
 <p th:each="area : ${cv.skillset}" class="c17">
     <div style="margin-top: 10px; width: 100%; overflow: overlay;">
-        <span style="height: 100%;" class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <span class="c11 c2 c7">String[]</span><span class="c0">&nbsp;</span>
+        <span class="c11 c2 c7" style="margin-left: 4em;">String[]</span><span class="c0">&nbsp;</span>
         <!--Skill area-->
         <span class="c0 c3" th:text="${area.key}" />
-        <div style="text-indent: -10em; width: 25em; float: right;">
-            <span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <div style="text-indent: -6em; width: 28em; float: right;">
             <span class="c11 c2 c7">= new String[] {</span>
             <span th:each="skill, iterStat: ${area.value}">
                     <span class="c0 c2">&quot;</span><span class="c0 c3" th:text="${skill}"/><span class="c0 c2">&quot;</span><span th:unless="${iterStat.last}" class="c0 c2" th:text="', '"/>
