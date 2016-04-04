@@ -23,7 +23,7 @@ public class RootController {
         ModelAndView model = new ModelAndView();
         model.setViewName("hello");
         model.addObject("title", "It Works!");
-        model.addObject("appVersion", "0.0.2");
+        model.addObject("appVersion", "0.2-SNAPSHOT");
 
         Map<String, List<String>> skillset = new LinkedHashMap<>();
         skillset.put("javaStack", Arrays.asList("Java EE", "Core Java", "JDBC", "Spring DI/MVC",
