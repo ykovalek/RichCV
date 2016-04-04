@@ -24,7 +24,7 @@ public class RootController {
         model.setViewName("index");
         model.addObject("ciServerGuestLogin", "http://www.kovalek.tk:8111/TeamCity?guest=1");
         model.addObject("githubLink", "https://github.com/ykovalek/RichCV");
-        model.addObject("appVersion", "0.2-SNAPSHOT");
+        model.addObject("appVersion", "0.3-SNAPSHOT");
 
         Map<String, List<String>> skillset = new LinkedHashMap<>();
         skillset.put("javaStack", Arrays.asList("Java EE", "Core Java", "JDBC", "Spring DI/MVC",
