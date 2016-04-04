@@ -36,7 +36,8 @@
         <div style="text-indent: -6em; width: 28em; float: right;">
             <span class="c11 c2 c7">= new String[] {</span>
             <span th:each="skill, iterStat: ${area.value}">
-                    <span class="c0 c2">&quot;</span><span class="c0 c3" th:text="${skill}"/><span class="c0 c2">&quot;</span><span th:unless="${iterStat.last}" class="c0 c2" th:text="', '"/>
+                    <span class="c0 c2">&quot;
+                    </span><span class="c0 c3" th:text="${skill}"/><span class="c0 c2">&quot;</span><span th:unless="${iterStat.last}" class="c0 c2" th:text="', '"/>
             </span>
             <span class="c11 c2 c7">};</span>
         </div>
@@ -44,135 +45,45 @@
 </p>
 <p class="c6"><span class="c11 c7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
 
-<div style="margin-top: 10px; width: 100%; overflow: overlay;">
+<div style="margin-top: 10px; width: 100%; overflow: hidden;">
     <p class="c6">
-            <span class="c7" style="margin-left: 40px;">History </span><span class="c3 c7">work</span><span class="c0">&nbsp;</span><span class="c11 c7 c24">= HistoryUtils.fromJSON( --inline&gt;&gt;</span>
+        <span class="c7" style="margin-left: 40px;">History </span><span class="c3 c7">work&nbsp;</span><span class="c11 c7 c24">= HistoryUtils.fromJSON( --inline&gt;&gt;</span>
     </p>
     <div th:each="item, iStat : ${cv.workHistory}" style="overflow: hidden;">
         <p class="c6" style="margin-left: 80px;">
-            <span class="c0">&quot;</span><span class="c7">Jan 2015 - Jun 2015</span><span class="c0">&quot;: </span><span
-                class="c0 c2">{title:</span><span class="c0">&nbsp;&quot;</span><span class="c4">Chief Software Architect</span><span
-                class="c7">&nbsp;at</span><span class="c0">&nbsp;</span><span class="c7">Aurea.com</span><span class="c0">&quot;,</span>
+            <span class="c0">&quot;</span><span class="c7" th:text="${#dates.format(item.key.first, 'MMM YYYY') + ' - ' + #dates.format(item.key.second, 'MMM YYYY')}">Jan 2015 - Jun 2015</span><span class="c0">&quot;: </span><span
+                class="c0 c2">{title:</span><span class="c0">&nbsp;&quot;</span><span class="c4" th:text="${item.value.position}"/><span
+                class="c7">&nbsp;at</span><span class="c0">&nbsp;<span class="c7" th:text="${item.value.company}"/>&quot;,</span>
         </p>
-            <p class="c6" style="text-indent: -6em; width: 37em; float: right; margin-right: 0px;">
-                <span class="c0 c2">description:</span><span class="c0">&quot;</span><span class="c0 c13 c10">Ensuring the quality of the product; factorising the development,
-            testing,and integration; bringing the product modules and processes up-to-date with requirements, standards and tools.</span>
-                <span class="c0">&quot;,</span>
-            </p>
-            <p class="c6" style="text-indent: -6em; width: 37em; float: right; margin-right: 0px;"><span
-                class="c0 c2">techStack:</span><span class="c0">&nbsp;&quot;</span><span class="c0 c3">Java, Tomcat, JUnit, Maven, TeamCity, ALine</span><span
-                class="c0">&quot;</span><span class="c0 c2">},</span>
-            </p>
-    </div>
 
-    <p class="c5"><span class="c11 c7"></span></p>
-    <p class="c6"><span class="c7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
-            class="c0">&quot;</span><span class="c7">May 2013 - Dec 2014</span><span class="c0">&quot;: </span><span
-            class="c0 c2">{title:</span><span class="c0">&nbsp;&quot;</span><span
-            class="c4">Independent contractor</span><span class="c7">&nbsp;on oDesk.com</span><span
-            class="c0">&quot;,</span></p>
-    <p class="c6"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-            class="c0 c2">description:</span><span class="c0">&quot;*</span><span class="c0 c13 c10">Sabre Red application for tourism industry: event booking tied to</span>
-    </p>
-    <p class="c6 c14"><span class="c0 c13 c10">itinerary and hotel search in the Sabre suit</span><span class="c0">;</span>
-    </p>
-    <p class="c6 c14"><span class="c0 c13 c10">*REST API for mobile apps &amp; Java wrappers for REST API;</span></p>
-    <p class="c6 c14"><span class="c0 c13 c10">*OpenCellID - location &amp; measurements data for cell towers gathered from mobile clients &amp; 3rd parties. Millions of records written to DB every day;</span>
-    </p>
-    <p class="c6 c14"><span class="c0 c13 c10">*Glassfish setup &amp; troubleshooting.</span><span
-            class="c0 c13 c10">&quot;</span></p>
-    <p class="c6"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-            class="c0 c2">techStack:</span><span class="c0">&nbsp;&quot;</span><span class="c0 c3">Core Java, Sabre Red API, REST/JAX-RS/Jersey, Hibernate, MySQL, MongoDB,</span>
-    </p>
-    <p class="c6 c9"><span class="c0 c3">Spring MVC, Tomcat, AWS, Glassfish</span><span class="c0">&quot;</span><span
-            class="c0 c2">}</span><span class="c2 c7 c15">,</span></p>
-    <p class="c5 c9"><span class="c11 c7"></span></p>
-    <p class="c6"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;</span><span class="c7">May 2012 - May 2013</span><span
-            class="c0">&quot;: </span><span class="c0 c2">{title:</span><span class="c0">&nbsp;&quot;</span><span
-            class="c4">Database Analyst</span><span class="c7">&nbsp;at olx.ua</span><span class="c7">&nbsp;(former slando.ua)</span><span
-            class="c0">&quot;,</span></p>
-    <p class="c6"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-            class="c0 c2">description:</span><span class="c0">&quot;</span><span class="c0 c13 c10">Powered the Marketing Department with scores of business data, indices, and</span>
-    </p>
-    <p class="c6 c14"><span
-            class="c0 c13 c10">performance indicators to be used in PR &amp; marketing campaigns, partner</span></p>
-    <p class="c6 c14"><span class="c0 c13 c10">programs, all sorts of internal reports and more. Developed in-house tools &amp; automated processes for Slando Marketing Department allowing our PR managers, business analysts, media planners, and partners to focus on the essential things and get new brand insights. </span><span
-            class="c0">OLX </span><span class="c0 c10 c13">provides free online classifieds services in Ukraine, Russia, Belarus, and Kazakhstan.</span><span
-            class="c0">&quot;,</span></p>
-    <p class="c6"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-            class="c0 c2">techStack:</span><span class="c0">&nbsp;&quot;</span><span class="c0 c3">Java, Tomcat, MySQL, JDBC, JAX-WS/Axis</span><span
-            class="c0">&quot;</span><span class="c0 c2">},</span></p>
-    <p class="c5"><span class="c11 c7"></span></p>
-    <p class="c6 c21"><span class="c0">&nbsp; &quot;</span><span class="c7">May 2011 - Mar 2012</span><span class="c0">&quot;: </span><span
-            class="c0 c2">{title:</span><span class="c0">&nbsp;&quot;</span><span class="c4">Web Engineer</span><span
-            class="c7">&nbsp;at</span><span class="c0">&nbsp;</span><span class="c7">L1 Technologies, Inc.</span><span
-            class="c0">&quot;,</span></p>
-    <p class="c6"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-            class="c0 c2">description:</span><span class="c0">&quot;</span><span class="c0 c10">Worked in the iGolf department developing REST services for iGolf devices,</span>
-    </p>
-    <p class="c6 c9"><span class="c0 c10">reviewing code, re-engineering Vehicle Telematics / </span><span
-            class="c0 c10">G</span><span class="c0 c10">PS-enabled iGolf server</span></p>
-    <p class="c6 c9"><span class="c0 c10">applications, and was the architect and principal programmer on the new GIS</span>
-    </p>
-    <p class="c6 c9"><span class="c0 c10">project the company was developing.</span><span class="c0">&quot;,</span></p>
-    <p class="c6"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-            class="c0 c2">techStack:</span><span class="c0">&nbsp;&quot;</span><span class="c0 c3">Java EE, Tomcat, JPA/Cassandra/MySQL, AWS, XML/JSON, JUnit, CI</span><span
-            class="c0">&quot;</span><span class="c0 c2">},</span></p>
-    <p class="c5"><span class="c11 c7"></span></p>
-    <p class="c6 c12"><span class="c0">&nbsp; &quot;</span><span class="c7">Jan 2010 - Apr 2011</span><span class="c0">&quot;:</span><span
-            class="c0 c2">&nbsp;{title:</span><span class="c0">&nbsp;&quot;</span><span class="c4">Software Developer</span><span
-            class="c7">&nbsp;at</span><span class="c0">&nbsp;</span><span class="c7">VLF Networks B.V.</span><span
-            class="c0">&quot;,</span></p>
-    <p class="c6"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-            class="c0 c2">description:</span><span class="c0">&quot;</span><span class="c0 c10">Worked as a server application programmer, having developed</span>
-    </p>
-    <p class="c6 c9"><span class="c0 c10">several mobile application back-ends for a number of leading Dutch and</span></p>
-    <p class="c6 c9"><span class="c0 c10">multinational businesses (Rabobank &amp; FC Ajax among them).</span><span
-            class="c0">&quot;,</span></p>
-    <p class="c6"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-            class="c0 c2">techStack:</span><span class="c0">&nbsp;&quot;</span><span class="c0 c3">Java EE, Glassfish, JPA/MySQL/Hibernate, XML/XSLT/JSON, JUnit, EJB,</span>
-    </p>
-    <p class="c6 c9"><span class="c0 c3">JMS, JNDI, WebServices/REST/SOAP</span><span class="c0">&quot;</span><span
-            class="c0 c2">},</span></p>
-    <p class="c5"><span class="c11 c7"></span></p>
-    <p class="c6 c12"><span class="c0">&nbsp; &quot;</span><span class="c7">Nov</span><span
-            class="c7">&nbsp;2006 - Jan 2010</span><span class="c0">&quot;:</span><span
-            class="c0 c2">&nbsp;{title:</span><span class="c0">&nbsp;&quot;</span><span
-            class="c4">Java Developer</span><span class="c7">&nbsp;at</span><span class="c0">&nbsp;</span><span class="c7">Eclipse SP (now Sigma)</span><span
-            class="c0">&quot;,</span></p>
-    <p class="c6"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-            class="c0 c2">description:</span><span class="c0">&quot;</span><span class="c0 c10">Worked as Java Developer and Support Engineer, participating in several</span>
-    </p>
-    <p class="c6 c9"><span class="c0 c10">projects, like </span><span class="c0">Eclipse Time Server</span><span
-            class="c0 c10">, OpenFusion CORBA Services, and</span></p>
-    <p class="c6 c9"><span class="c0 c10">a proprietary advanced calculation toolkit used by Orange UK and other</span></p>
-    <p class="c6 c9"><span class="c0 c10">mobile operators.</span><span class="c0">&quot;,</span></p>
-    <p class="c6"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-            class="c0 c2">techStack:</span><span class="c0">&nbsp;&quot;</span><span class="c0 c3">Java SE/EE, Tomcat, GWT, JDBC, ANTLR, JUnit, XML/XSLT</span><span
-            class="c0">&quot;</span><span class="c0 c2">}</span></p>
-    <p class="c6 c21 c12"><span class="c11 c7">&nbsp;</span><span class="c11 c2 c7">&nbsp;&lt;&lt;inline--);</span></p>
-    <p class="c5"><span class="c11 c7"></span></p>
+        <div style="overflow: hidden;">
+        <span class="c0 c2" style="margin-left: 110px;">description:</span><p class="c6" style="text-indent: -0.5em; width: 40em; float: right; margin-right: 0px;">
+                <span class="c0">&quot;<span class="c13 c10" th:text="${item.value.description}"/>&quot;,</span>
+            </p>
+        </div>
+        <div style="overflow: hidden;">
+            <span class="c0 c2" style="margin-left: 110px;">techStack:</span><p class="c6" style="text-indent: -0.5em; width: 40em; float: right; margin-right: 0px;">
+            <span class="c0">&quot;<span class="c3" th:text="${item.value.techStack}"/>&quot;<span class="c2" th:text="'}'"/><span th:unless="${iStat.last}" th:text="," class="c2"/></span>
+            </p>
+        </div>
+    </div>
+    <p class="c6 c33"><span class="c11 c7">&nbsp;</span><span class="c11 c2 c7">&nbsp;&lt;&lt;inline--);</span></p>
 </div>
 
+<div style="margin-top: 10px; width: 100%; overflow: hidden;">
+    <p class="c6">
+        <span class="c7" style="margin-left: 40px;">History </span><span class="c3 c7">education&nbsp;</span><span class="c11 c2 c7">= HistoryUtils.fromJSON( --inline&gt;&gt;</span>
+    </p>
+    <div th:each="item, iStat : ${cv.eduHistory}" style="overflow: hidden;">
+        <p class="c6">
+            <span class="c0">&quot;</span><span class="c7" th:text="${#dates.format(item.key.first, 'MMM YYYY') + ' - ' + #dates.format(item.key.second, 'MMM YYYY')}">Jan 2015 - Jun 2015</span><span class="c0">&quot;: </span>
+            <span class="c0 c2">{title:</span><span class="c0">&nbsp;&quot;</span><span class="c4" th:text="${item.value.degree}" /><span class="c0">&quot;,</span></p>
+        <p class="c6">
+            <span class="c0 c2">uni:</span><span class="c0" th:text="'&quot;' + ${item.value.uni} + '&quot;'"/><span class="c0 c2" th:text="'}'"/><span th:unless="${iStat.last}" class="c0 c2">,</span></p>
+    </div>
+    <p class="c6 c33"><span class="c11 c7">&nbsp;</span><span class="c11 c2 c7">&nbsp;&lt;&lt;inline--);</span></p>
+</div>
 
-<p class="c6"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-        class="c7">History </span><span class="c3 c7">education</span><span class="c0">&nbsp;</span><span
-        class="c11 c2 c7">= HistoryUtils.fromJSON( --inline&gt;&gt;</span></p>
-<p class="c6"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;</span><span class="c7">Sep 2004 - Mar 2006</span><span
-        class="c0">&quot;:</span><span class="c0 c2">{title:</span><span class="c0">&nbsp;&quot;</span><span class="c4">MSc in Applied Artificial Intelligence</span><span
-        class="c0">&quot;,</span></p>
-<p class="c6"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-        class="c0 c2">uni:</span><span class="c0">&nbsp;&quot;IT University of Gothenburg / Chalmers University of Technology&quot;</span><span
-        class="c0 c2">},</span></p>
-<p class="c5"><span class="c11 c7"></span></p>
-<p class="c6"><span class="c7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
-        class="c0">&quot;</span><span class="c7">Sep 2000 - Jun 2004</span><span class="c0">&quot;:</span><span
-        class="c0 c2">{title:</span><span class="c0">&nbsp;&quot;</span><span
-        class="c4">BSc in Computer Science</span><span class="c0">&quot;,</span></p>
-<p class="c1"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-        class="c0 c2">uni:</span><span
-        class="c0">&nbsp;&quot;National University of Kyiv-Mohyla Academy&quot;</span><span class="c0 c2">}</span></p>
-<p class="c6 c33"><span class="c11 c7">&nbsp;</span><span class="c11 c2 c7">&nbsp;&lt;&lt;inline--);</span></p>
 <p class="c5"><span class="c11 c7"></span></p>
 <p class="c6"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@MessageDriven(topic=&quot;Job Offer&quot;, transport=&quot;email, phone&quot;)</span>
 </p>

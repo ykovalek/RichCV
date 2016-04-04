@@ -1,14 +1,13 @@
 package yuriy.kovalek;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.util.Tuple;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.persistence.EntityManager;
-import java.time.LocalDate;
-import java.time.Period;
 import java.util.*;
 
 /**
@@ -40,9 +39,22 @@ public class RootController {
         cv.put("email", "yuriy.kovalek at gmail.com");
         cv.put("phone", "+380.99.294.56.91");
 
-        Map<Period, Object> workHistory = new LinkedHashMap<>();
-        workHistory.put(Period.between(LocalDate.MIN, LocalDate.now()), "");
+        Map<Tuple<Date, Date>, Object> workHistory = new LinkedHashMap<>();
+        Map<String, String> data = new HashMap<>();
+        data.put("description", "Ensuring the quality of the product; factorising the development, " +
+                "testing, and integration; bringing the product modules and processes up-to-date with requirements, standards and tools.");
+        data.put("techStack", "Java, Tomcat, JUnit, Maven, TeamCity, ALine");
+        data.put("position", "Chief Software Architect");
+        data.put("company", "Aurea.com");
+        workHistory.put(Tuple.of(new Date(), new Date()), data);
         cv.put("workHistory", workHistory);
+
+        Map<Tuple<Date, Date>, Object> eduHistory = new LinkedHashMap<>();
+        Map<String, String> eduData = new HashMap<>();
+        eduData.put("degree", "MSc in Applied Artificial Intelligence");
+        eduData.put("uni", "IT University of Gothenburg / Chalmers University of Technology");
+        eduHistory.put(Tuple.of(new Date(), new Date()), eduData);
+        cv.put("eduHistory", eduHistory);
 
         model.addObject("cv", cv);
         return model;
