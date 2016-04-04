@@ -16,11 +16,11 @@
             <p class="c8"><span class="c0 c25">@SoftwareEngineer(lang=&quot;Java&quot;)</span></p>
             <p class="c8"><span class="c0">@Email(&quot;</span><span class="c0 c23"><a class="c22" th:text="${cv.email}"/></span><span class="c25 c0">&quot;)</span></p>
             <p class="c8"><span class="c25 c0" th:text="'@Phone(&quot;'+ ${cv.phone} +'&quot;)'"/></p></td>
-        <td class="c31" colspan="1" rowspan="1"><p class="c17 c32"><span
-                style="overflow: hidden; display: inline-block; margin: 0.00px 0.00px; border: 0.00px solid #000000; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px); width: 150.98px; height: 150.98px;"><img
-                alt="04a8202.jpg" src="resources/images/image00.jpg"
-                style="width: 150.98px; height: 150.98px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
-                title="" /></span></p></td>
+        <td class="c31" colspan="1" rowspan="1">
+            <img class="portrait"
+                alt="${cv.name} + '.jpg'" src="resources/images/image00.jpg"
+                title="" />
+        </td>
     </tr>
     </tbody>
 </table>
@@ -29,15 +29,15 @@
         class="c0">&nbsp;</span><span class="c11 c2 c7">{</span></p>
 
 <p th:each="area : ${cv.skillset}" class="c17">
-    <div style="margin-top: 10px; width: 100%; overflow: overlay;">
-        <span class="c11 c2 c7" style="margin-left: 40px;">String[]</span><span class="c0">&nbsp;</span>
+    <div class="common section">
+        <span class="c11 c2 c7 alignLeft">String[]</span><span class="c0">&nbsp;</span>
         <!--Skill area-->
         <span class="c0 c3" th:text="${area.key}" />
-        <div style="text-indent: -6em; width: 28em; float: right;">
+        <div class="contentBlock skillBlock">
             <span class="c11 c2 c7">= new String[] {</span>
             <span th:each="skill, iterStat: ${area.value}">
-                    <span class="c0 c2">&quot;
-                    </span><span class="c0 c3" th:text="${skill}"/><span class="c0 c2">&quot;</span><span th:unless="${iterStat.last}" class="c0 c2" th:text="', '"/>
+                    <span class="c0 c2">&quot;</span><span
+                    class="c0 c3" th:text="${skill}"/><span class="c0 c2">&quot;</span><span th:unless="${iterStat.last}" class="c0 c2" th:text="', '"/>
             </span>
             <span class="c11 c2 c7">};</span>
         </div>
@@ -45,24 +45,24 @@
 </p>
 <p class="c6"><span class="c11 c7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
 
-<div style="margin-top: 10px; width: 100%; overflow: hidden;">
+<div class="common section">
     <p class="c6">
-        <span class="c7" style="margin-left: 40px;">History </span><span class="c3 c7">work&nbsp;</span><span class="c11 c7 c24">= HistoryUtils.fromJSON( --inline&gt;&gt;</span>
+        <span class="c7 alignLeft">History </span><span class="c3 c7">work&nbsp;</span><span class="c11 c7 c24">= HistoryUtils.fromJSON( --inline&gt;&gt;</span>
     </p>
-    <div th:each="item, iStat : ${cv.workHistory}" style="overflow: hidden;">
-        <p class="c6" style="margin-left: 80px;">
+    <div th:each="item, iStat : ${cv.workHistory}" class="common">
+        <p class="c6 historyItem">
             <span class="c0">&quot;</span><span class="c7" th:text="${#dates.format(item.key.first, 'MMM YYYY') + ' - ' + #dates.format(item.key.second, 'MMM YYYY')}">Jan 2015 - Jun 2015</span><span class="c0">&quot;: </span><span
                 class="c0 c2">{title:</span><span class="c0">&nbsp;&quot;</span><span class="c4" th:text="${item.value.position}"/><span
                 class="c7">&nbsp;at</span><span class="c0">&nbsp;<span class="c7" th:text="${item.value.company}"/>&quot;,</span>
         </p>
 
-        <div style="overflow: hidden;">
-        <span class="c0 c2" style="margin-left: 110px;">description:</span><p class="c6" style="text-indent: -0.5em; width: 40em; float: right; margin-right: 0px;">
+        <div class="common">
+        <span class="c0 c2 indentLeft">description:</span><p class="c6 contentBlock historyBlock">
                 <span class="c0">&quot;<span class="c13 c10" th:text="${item.value.description}"/>&quot;,</span>
             </p>
         </div>
-        <div style="overflow: hidden;">
-            <span class="c0 c2" style="margin-left: 110px;">techStack:</span><p class="c6" style="text-indent: -0.5em; width: 40em; float: right; margin-right: 0px;">
+        <div class="common">
+            <span class="c0 c2 indentLeft">techStack:</span><p class="c6 contentBlock historyBlock">
             <span class="c0">&quot;<span class="c3" th:text="${item.value.techStack}"/>&quot;<span class="c2" th:text="'}'"/><span th:unless="${iStat.last}" th:text="," class="c2"/></span>
             </p>
         </div>
@@ -70,35 +70,35 @@
     <p class="c6 c33"><span class="c11 c7">&nbsp;</span><span class="c11 c2 c7">&nbsp;&lt;&lt;inline--);</span></p>
 </div>
 
-<div style="margin-top: 10px; width: 100%; overflow: hidden;">
+<div class="common section">
     <p class="c6">
-        <span class="c7" style="margin-left: 40px;">History </span><span class="c3 c7">education&nbsp;</span><span class="c11 c2 c7">= HistoryUtils.fromJSON( --inline&gt;&gt;</span>
+        <span class="c7 alignLeft">History </span><span class="c3 c7">education&nbsp;</span><span class="c11 c2 c7">= HistoryUtils.fromJSON( --inline&gt;&gt;</span>
     </p>
-    <div th:each="item, iStat : ${cv.eduHistory}" style="overflow: hidden;">
-        <p class="c6">
+    <div th:each="item, iStat : ${cv.eduHistory}" class="common">
+        <p class="c6 historyItem">
             <span class="c0">&quot;</span><span class="c7" th:text="${#dates.format(item.key.first, 'MMM YYYY') + ' - ' + #dates.format(item.key.second, 'MMM YYYY')}">Jan 2015 - Jun 2015</span><span class="c0">&quot;: </span>
             <span class="c0 c2">{title:</span><span class="c0">&nbsp;&quot;</span><span class="c4" th:text="${item.value.degree}" /><span class="c0">&quot;,</span></p>
-        <p class="c6">
-            <span class="c0 c2">uni:</span><span class="c0" th:text="'&quot;' + ${item.value.uni} + '&quot;'"/><span class="c0 c2" th:text="'}'"/><span th:unless="${iStat.last}" class="c0 c2">,</span></p>
+        <span class="c0 c2 indentLeft">uni:</span><p class="c6 contentBlock historyBlock">
+            <span class="c0" th:text="'&quot;' + ${item.value.uni} + '&quot;'"/><span class="c0 c2" th:text="'}'"/><span th:unless="${iStat.last}" class="c0 c2">,</span></p>
     </div>
     <p class="c6 c33"><span class="c11 c7">&nbsp;</span><span class="c11 c2 c7">&nbsp;&lt;&lt;inline--);</span></p>
 </div>
 
 <p class="c5"><span class="c11 c7"></span></p>
-<p class="c6"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@MessageDriven(topic=&quot;Job Offer&quot;, transport=&quot;email, phone&quot;)</span>
+<p class="c6 alignLeft"><span class="c0">@MessageDriven(topic=&quot;Job Offer&quot;, transport=&quot;email, phone&quot;)</span>
 </p>
-<p class="c6 c12"><span class="c0 c2">public boolean </span><span class="c3 c7">isHireable</span><span class="c0 c2">(Company company, Salary&lt;USD&gt; salary) </span><span
+<p class="c6  alignLeft"><span class="c0 c2">public boolean </span><span class="c3 c7">isHireable</span><span class="c0 c2">(Company company, Salary&lt;USD&gt; salary) </span><span
         class="c11 c2 c7">{</span></p>
-<p class="c6 c12 c21"><span class="c0 c2">return</span><span class="c0">&nbsp;like(company) &amp;&amp; salary.netValue() &gt; comfortableSalary();</span>
+<p class="c6 c21"><span class="c0 c2">return</span><span class="c0">&nbsp;like(company) &amp;&amp; salary.netValue() &gt; comfortableSalary();</span>
 </p>
-<p class="c6 c12"><span class="c11 c2 c7">}</span></p>
-<p class="c5 c12"><span class="c0 c2"></span></p>
-<p class="c6 c12"><span class="c0 c2">private boolean </span><span class="c3 c7">like</span><span class="c0 c2">(Company company)</span><span
+<p class="c6 alignLeft"><span class="c11 c2 c7">}</span></p>
+<p class="c5 "><span class="c0 c2"></span></p>
+<p class="c6 alignLeft"><span class="c0 c2">private boolean </span><span class="c3 c7">like</span><span class="c0 c2">(Company company)</span><span
         class="c11 c2 c7">&nbsp;{</span></p>
-<p class="c6 c12"><span class="c0 c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return </span><span class="c0">clearCareerPath(company) &amp;&amp; goodOffice(company) &amp;&amp; insurancePaidBy(company)</span>
+<p class="c6 "><span class="c0 c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return </span><span class="c0">clearCareerPath(company) &amp;&amp; goodOffice(company) &amp;&amp; insurancePaidBy(company)</span>
 </p>
 <p class="c6 c33"><span class="c0">&nbsp; &amp;&amp; (hasMotorcycleParking(company)?true:new DeferredDecision(company).ponder(A_LITTLE));</span>
 </p>
-<p class="c6 c12"><span class="c11 c2 c7">}</span></p>
+<p class="c6 alignLeft"><span class="c11 c2 c7">}</span></p>
 <p class="c17"><span class="c11 c2 c7">}</span></p></body>
 </html>
