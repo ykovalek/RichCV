@@ -6,14 +6,17 @@
     <title th:text="'RichCV v. '+ ${appVersion}"/>
 </head>
 <body>
-    <div id="menu" class="menu">
-        <ol>
+    <div id="menu" class="common background">
+        <div class="menu">
+        <ul>
+            <li id="offset">...</li>
             <li><a th:href="@{/print}">Printer-friendly</a></li>
             <li><a th:href="@{/about}">About</a></li>
             <li><a th:href="@{${githubLink}}">View code on Github</a></li>
             <li><a th:href="@{${ciServerGuestLogin}}">Continuous Integration</a></li>
             <li><a th:href="@{/hireme}">Hire me!</a></li>
-        </ol>
+        </ul>
+        </div>
     </div>
     <div th:replace="RichCV :: cv"/>
 </body>
