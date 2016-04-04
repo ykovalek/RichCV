@@ -53,7 +53,7 @@
         <p class="c6 historyItem">
             <span class="c0">&quot;</span><span class="c7" th:text="${#dates.format(item.key.first, 'MMM YYYY') + ' - ' + #dates.format(item.key.second, 'MMM YYYY')}">Jan 2015 - Jun 2015</span><span class="c0">&quot;: </span><span
                 class="c0 c2">{title:</span><span class="c0">&nbsp;&quot;</span><span class="c4" th:text="${item.value.position}"/><span
-                class="c7">&nbsp;at</span><span class="c0">&nbsp;<span class="c7" th:text="${item.value.company}"/>&quot;,</span>
+                class="c7">&nbsp;at</span><span class="c0" th:text="'&nbsp;'"/><span class="c7" th:text="${item.value.company}"/><span class="c0" th:text="'&quot;,'"/>
         </p>
 
         <div class="common">
