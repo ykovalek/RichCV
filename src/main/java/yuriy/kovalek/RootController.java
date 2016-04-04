@@ -21,8 +21,9 @@ public class RootController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView root() {
         ModelAndView model = new ModelAndView();
-        model.setViewName("hello");
-        model.addObject("title", "It Works!");
+        model.setViewName("index");
+        model.addObject("ciServerGuestLogin", "http://www.kovalek.tk:8111/TeamCity?guest=1");
+        model.addObject("githubLink", "https://github.com/ykovalek/RichCV");
         model.addObject("appVersion", "0.2-SNAPSHOT");
 
         Map<String, List<String>> skillset = new LinkedHashMap<>();

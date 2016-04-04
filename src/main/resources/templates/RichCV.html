@@ -2,10 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
-    <link rel="stylesheet" href="resources/core/css/hello.css"/>
+    <link rel="stylesheet" href="resources/core/css/RichCV.css"/>
     <title th:text="'RichCV v. '+ ${appVersion}"/>
 </head>
-<body class="c10 c19"><p class="c17 c20"><span class="c0"></span></p><a
+<body>
+<div class="c10 c19" th:fragment="cv">
+<p class="c17 c20"><span class="c0"></span></p><a
         id="t.360b9fda0ea703ea0cf6d1249175d9d272d89124"></a><a id="t.0"></a>
 <table class="c28">
     <tbody>
@@ -100,5 +102,7 @@
 <p class="c6 c33"><span class="c0">&nbsp; &amp;&amp; (hasMotorcycleParking(company)?true:new DeferredDecision(company).ponder(A_LITTLE));</span>
 </p>
 <p class="c6 alignLeft"><span class="c11 c2 c7">}</span></p>
-<p class="c17"><span class="c11 c2 c7">}</span></p></body>
+<p class="c17"><span class="c11 c2 c7">}</span></p>
+</div>
+</body>
 </html>

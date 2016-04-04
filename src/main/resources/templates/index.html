@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
+    <link rel="stylesheet" href="resources/core/css/RichCV.css"/>
+    <title th:text="'RichCV v. '+ ${appVersion}"/>
+</head>
+<body>
+    <div id="menu" class="menu">
+        <ol>
+            <li><a th:href="@{/print}">Printer-friendly</a></li>
+            <li><a th:href="@{/about}">About</a></li>
+            <li><a th:href="@{${githubLink}}">View code on Github</a></li>
+            <li><a th:href="@{${ciServerGuestLogin}}">Continuous Integration</a></li>
+            <li><a th:href="@{/hireme}">Hire me!</a></li>
+        </ol>
+    </div>
+    <div th:replace="RichCV :: cv"/>
+</body>
+</html>
